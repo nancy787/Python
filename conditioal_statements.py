@@ -10,14 +10,14 @@ else:
 
 # programme to chek number is even or odd
 num = int(input("Enter your number"))
-if (num % 2) == 0 :
+if (num % 2 == 0) :
     print('Even')
 else :
     print('Odd')
 
 # programme to chek where teh the numbver is multiple of 7 or not
 num = int(input("Enter number ")) 
-if(num % 7) == 0 :
+if(num % 7 == 0) :
     print(True)
 else :
     print(False)
