@@ -69,3 +69,18 @@ def fibbo(n) :
 
 fibbo(5)
 
+# Pallindrome
+def pallindrome(start, end) :
+
+    if start >= end :
+        return True
+    if(num[start] != num[end]) : 
+        return False
+    
+    return pallindrome(start + 1, end - 1)
+
+num = 'nans'
+start  = 0
+end = len(num) - 1
+print(pallindrome(start, end))
+    
