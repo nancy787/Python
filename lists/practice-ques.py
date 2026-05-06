@@ -27,3 +27,13 @@ print(secondLargest([1, 2, 4, 7, 7, 5]))
 # time complesity o(n)
 # space complecity o(n)
 
+# Check if an Array is Sorted
+def issorted(arr) :
+    for i in range(len(arr) - 1) :
+        if arr[i] > arr[i + 1] :
+            return False
+
+    return True
+
+print(issorted([5,4,6,7,8]))
+# time complexity o(n)
