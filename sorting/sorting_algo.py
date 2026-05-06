@@ -83,3 +83,34 @@ start = 0
 end = len(mylist) - 1
 mergeSort(mylist, start, end)
 print(mylist)
+
+# quick sort
+def partiton(arr, start, end) :
+    index = start - 1
+    pivot = arr[end]
+    for j in range(start, end) :
+        if arr[j] <= pivot :
+            index += 1
+            arr[j], arr[index] = arr[index], arr[j]
+
+    index += 1
+    arr[end], arr[index] = arr[index], arr[end]
+    return index
+
+
+def quicksort(arr, start, end) :
+    if start < end :
+        pivot = partiton(arr, start, end)
+
+        quicksort(arr, start, pivot - 1) 
+        quicksort(arr, pivot + 1, end)
+
+
+def main() : 
+    arr = [5,2,6,4,1,3]
+    quicksort(arr, 0, len(arr) - 1)
+    for val in arr :
+        print(val)
+    return 0
+
+main()
