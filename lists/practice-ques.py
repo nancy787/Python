@@ -37,3 +37,38 @@ def issorted(arr) :
 
 print(issorted([5,4,6,7,8]))
 # time complexity o(n)
+
+# Remove Duplicates in-place from Sorted Array
+
+
+def removeDuplicates(nums) :
+    myset = set()
+    i = 0
+    for num in nums :
+        if num not in myset :
+            myset.add(num)
+            nums[i] += 1
+
+    return myset
+
+print(removeDuplicates([1,1,2,2,2,3,3]))
+# time complexity o(n)
+# space complexity o(n)
+
+def removeDuplicatesTwoPointers(nums) :
+    if not nums :
+        return 0 
+    i = 0
+    for j in range(1, len(nums)) :
+        if nums[j] != nums[i] :
+            nums[i] += 1
+            nums[i] = nums[j]
+
+    return i + 1
+
+
+nums = [1,1,2,2,3]
+k = removeDuplicatesTwoPointers(nums)
+
+print(k)
+print(nums[:k])
