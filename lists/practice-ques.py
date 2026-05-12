@@ -118,3 +118,36 @@ def main() :
 
 main()
 
+
+
+# Move all Zeros to the end of the array
+
+def moveZeroes(nums) :
+    temp = []
+    ze = nums.count(0)
+
+    n = len(nums)
+    for i in range(0, n) :
+        if nums[i] > 0 :
+            temp.append(nums[i])
+    
+    for i in range (ze) :
+        temp.append(0)
+
+    return temp
+
+zeros = moveZeroes([0, 1, 0, 3, 12])
+print(zeros)
+
+#  O(n2)
+
+def moveZeroTwoPointers(nums) :
+    j = 0
+    for i in range(0, len(nums)) :
+        if nums[i] != 0 :
+            nums[i], nums[j] = nums[j], nums[i]  
+            j+= 1
+    return nums 
+
+movezero = moveZeroTwoPointers([0, 1, 0, 3, 12])
+print(movezero)
