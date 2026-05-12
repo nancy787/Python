@@ -85,3 +85,36 @@ def leftRotate(nums) :
     return nums
 rotate = leftRotate([1, 2, 3, 4, 5])
 print(rotate)
+
+# Left rootate by k elemnets
+
+def reverseElement(nums, start, end) :
+    while start < end :
+        nums[start], nums[end] = nums[end], nums[start]
+        start += 1
+        end -= 1
+
+def RotateElemments(nums, k, direction) :
+    n = len(nums)
+    k = k % n
+
+    if direction == 'right':
+        reverseElement(nums, 0, n - 1)  
+        reverseElement(nums, 0, k - 1)
+        reverseElement(nums, k, n- 1)
+
+    if direction == 'left' :
+        reverseElement(nums, 0, k - 1)
+        reverseElement(nums, k, n - 1)
+        reverseElement(nums, 0, n - 1)
+    return nums
+
+def main() :
+    nums = [1, 2, 3, 4, 5, 6]
+    k = 2
+    direction = 'left'
+    elem =  RotateElemments(nums, k, direction)
+    print(elem)
+
+main()
+
