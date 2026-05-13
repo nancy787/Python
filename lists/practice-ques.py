@@ -196,7 +196,7 @@ def unionofTwoSortedArray(arr1, arr2) :
         j+= 1
 
     return union
-    
+
 result = unionofTwoSortedArray([1, 2, 2, 3, 4], [2, 3, 5])
 print(result)
 
@@ -208,3 +208,17 @@ result1 = unionset([1, 2, 2, 3, 4], [2, 3, 5])
 print(result1)
 
 # O((n + m) log(n + m))
+
+# Find The missing number
+def missingNumber(nums) :
+    sum = 0
+    n = len(nums) + 1
+    expected_result = n *  (n + 1) //2
+    for val in nums  :
+        sum += val
+
+    return expected_result - sum
+
+ans = missingNumber([8, 2, 4, 5, 3, 7, 1])
+print(ans)
+
