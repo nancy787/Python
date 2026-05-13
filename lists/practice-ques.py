@@ -201,3 +201,10 @@ result = unionofTwoSortedArray([1, 2, 2, 3, 4], [2, 3, 5])
 print(result)
 
 # Time and space compliexity O(n + m)
+def unionset(arr1, arr2) : 
+    union = sorted(set( arr1 + arr2))
+    return union
+result1 = unionset([1, 2, 2, 3, 4], [2, 3, 5])
+print(result1)
+
+# O((n + m) log(n + m))
