@@ -151,3 +151,53 @@ def moveZeroTwoPointers(nums) :
 
 movezero = moveZeroTwoPointers([0, 1, 0, 3, 12])
 print(movezero)
+
+# Linear Search 
+def linearSearch(nums, key) :
+    for i in range(0, len(nums)) :
+        if nums[i] == key :
+            print(f"{key} is present at the {0}th index of the array.")
+            return
+    return "key is not preset in the given list"
+
+search = linearSearch([1, 2, 3, 4, 5], 31)
+print(search)
+
+# union of twi shorted array
+
+def unionofTwoSortedArray(arr1, arr2) :
+    i = 0
+    j = 0
+    union = []
+
+    while(i < len(arr1) and j < len(arr2)) :
+        if arr1[i] < arr2[j] :
+            if len(union) == 0 or union[-1] != arr1[i] :
+                union.append(arr1[i])
+            i+= 1
+        elif arr1[i] > arr2[j] :
+            if len(union) == 0 or union[-1] != arr2[j] :
+                union.append(arr2[j])
+            j+= 1
+        else :
+                if len(union) == 0 or union[-1] != arr1[i] :
+                    union.append(arr1[i])
+                i+= 1
+                j+= 1
+    
+    while( i < len(arr1)) :
+        if len(union) == 0 or union[-1] != arr1[i] :
+            union.append(arr1[i])
+        i+=1
+    
+    while(j < len(arr2)) :
+        if len(union) == 0 or union[-1] != arr2[j] :
+            union.append(arr2[j])
+        j+= 1
+
+    return union
+    
+result = unionofTwoSortedArray([1, 2, 2, 3, 4], [2, 3, 5])
+print(result)
+
+# Time and space compliexity O(n + m)
