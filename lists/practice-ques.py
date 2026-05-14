@@ -222,3 +222,50 @@ def missingNumber(nums) :
 ans = missingNumber([8, 2, 4, 5, 3, 7, 1])
 print(ans)
 
+
+# Count Maximum Consecutive One's in the array
+def maxConsecutiveOne(nums) :
+    counter = 0
+    max_count = 0
+    for i in range(0, len(nums)) :
+        if nums[i] != 1 :
+            counter = 0
+        else :
+            counter += 1
+            max_count = max(counter, max_count)
+
+    return max_count
+
+res = maxConsecutiveOne([1, 1,1,1, 0, 1, 1, 1])
+print("res", res)
+
+# Find the number that appears once, and the other numbers twice
+def getSingleElement(nums) :
+    cnt = {}
+    for val in nums :
+        if val in cnt :
+            cnt[val] += 1
+        else :
+            cnt[val] = 1
+
+    for key, val in cnt.items() :
+            if val == 1 :
+                res = key
+
+    return res
+        
+op = getSingleElement([9,1,2,1,2])
+print("op", op)
+
+# on2
+def getSingleElem(nums) :
+    res = 0
+    for num in nums :
+        res ^=num 
+
+    return res
+
+se = getSingleElem([4,1,2,1,2])
+print("se", se)
+
+
