@@ -279,3 +279,20 @@ def subarray(arr) :
         print()
 subarr = subarray([10,5,2,7,1]) 
 print(subarr)
+
+# o(n3)
+
+def longestsumsubarray(arr) :
+    n = len(arr)
+    max_sum = float('-inf')
+    for i in range(0, n) :
+        current_sum = 0
+        for j in range(i, n) :
+            current_sum += arr[j]   
+            max_sum = max(max_sum, current_sum)
+
+    return max_sum
+
+
+subarr1 = longestsumsubarray([10,5,2,7,1]) 
+print(subarr1)
