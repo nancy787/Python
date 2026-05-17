@@ -282,17 +282,35 @@ print(subarr)
 
 # o(n3)
 
-def longestsumsubarray(arr) :
+# def longestsumsubarray(arr) :
+#     n = len(arr)
+#     max_sum = float('-inf')
+#     for i in range(0, n) :
+#         current_sum = 0
+#         for j in range(i, n) :
+#             current_sum += arr[j]   
+#             max_sum = max(max_sum, current_sum)
+
+#     return max_sum
+
+
+# subarr1 = longestsumsubarray([10,5,2,7,1]) 
+# print(subarr1)
+
+
+def subsubarray(arr, lenk) :
     n = len(arr)
-    max_sum = float('-inf')
+    maklen = 0
     for i in range(0, n) :
-        current_sum = 0
         for j in range(i, n) :
-            current_sum += arr[j]   
-            max_sum = max(max_sum, current_sum)
+            sum = 0
+            for k in range(i, j + 1) :
+                sum = sum + arr[k]
+        if(sum == lenk) : 
+            maklen = max(maklen, j - i +1)
 
-    return max_sum
+    return maklen
 
 
-subarr1 = longestsumsubarray([10,5,2,7,1]) 
+subarr1 = subsubarray([10,5,2,7,1], 15) 
 print(subarr1)
