@@ -108,3 +108,21 @@ def DutchNationalFlag(nums) :
 print(DutchNationalFlag([1, 0, 2, 1, 0]))
 # Timecolexity O(1)
 # Spaceconoeksty O(1)
+
+# Find the Majority Element that occurs more than N/2 times
+def majorityElement(nums) :
+    myset = {}
+    for num in nums :
+        if num in myset :
+            myset[num] += 1
+        else :
+            myset[num] = 1
+
+
+    for key,count in myset.items() :
+        if count > 2 :
+            return key
+
+    return -1
+
+print(majorityElement([7, 0, 0, 1, 7, 7, 2, 7, 7]))
