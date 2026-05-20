@@ -150,3 +150,22 @@ def majorityElementOptimal(nums) :
     return -1
 print(majorityElementOptimal([7, 0, 0, 1, 7, 7, 2, 7, 7]))
 # Timecompelixty O(n)
+
+# Kadans Algorithm maxmimum sum subarray
+
+def MaxSubarraySum(nums) :
+    sum = 0
+    maxi = float('-inf')
+    for i in range (0, len(nums)) :
+        if sum == 0 :
+            start = i
+        sum += nums[i]
+        if sum > maxi :
+            maxi = sum
+
+        if sum < 0 :
+            sum = 0
+    return maxi
+
+print(MaxSubarraySum([2, 3, 5, -2, 7, -4]))
+# Timecomplexity O(n) Space O(1)
