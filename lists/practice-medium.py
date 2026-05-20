@@ -126,3 +126,27 @@ def majorityElement(nums) :
     return -1
 
 print(majorityElement([7, 0, 0, 1, 7, 7, 2, 7, 7]))
+# Timecomplexity O(n2)
+# Space Complexity O(1)
+
+def majorityElementOptimal(nums) :
+    count = 0
+    element = 0
+
+    for num in nums :
+        if count == 0 :
+            element = num
+            count += 1
+        elif  element == num :
+                count += 1
+        else : 
+            count -= 1
+
+    cnt1 = nums.count(element)
+    
+    if cnt1 > (len(nums) // 2):
+        return element
+    
+    return -1
+print(majorityElementOptimal([7, 0, 0, 1, 7, 7, 2, 7, 7]))
+# Timecompelixty O(n)
