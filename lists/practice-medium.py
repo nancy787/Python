@@ -169,3 +169,21 @@ def MaxSubarraySum(nums) :
 
 print(MaxSubarraySum([2, 3, 5, -2, 7, -4]))
 # Timecomplexity O(n) Space O(1)
+
+# STock buy and sell
+def buyandSell(num):
+    maxprofit = 0
+    n = len(num)
+
+    for i in range(n):
+        for j in range(i + 1, n):
+            profit = num[j] - num[i]
+            maxprofit = max(maxprofit, profit)
+
+    return maxprofit
+
+buynsell = buyandSell([7,1,5,3,6,4])
+print(buynsell)
+
+# Timecomplexity = O(n2)
+# Space complirxy O(1)
