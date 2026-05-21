@@ -182,8 +182,24 @@ def buyandSell(num):
 
     return maxprofit
 
-buynsell = buyandSell([7,1,5,3,6,4])
+buynsell = buyandSell([7,6,4,3,1])
 print(buynsell)
 
 # Timecomplexity = O(n2)
 # Space complirxy O(1)
+
+# Buy and sell optimals
+def buysellopt(num) :
+    minsofar = num[0]
+    maxprofit  = 0
+    profit = 0
+    for i in range (1, len(num) - 1)  :
+        minsofar = min(minsofar, num[i])
+        profit = num[i] - minsofar 
+        maxprofit =  max(maxprofit, profit)
+    return maxprofit
+
+maxprofit = buysellopt([7,1,5,3,6,4])
+print(maxprofit)
+# timecompexity 0(n)
+# space compleicty O(1)
