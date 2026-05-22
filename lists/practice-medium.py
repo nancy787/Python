@@ -226,6 +226,23 @@ def rearrangeElement(nums):
 rearrange = rearrangeElement([1,2,-3,-1,-2,-3])
 print(rearrange)
 # Timecompexity is O(n2)
-# space compelity O(n)
+# space compelity O(n)/2
 
-#Op
+#Optimal approch
+
+def rearrange_by_sign(nums) :
+    pos  = 0
+    neg = 1
+    n = len(nums)
+    result = [0] * n
+    for i in range(0, n) :
+        if nums[i] > 0 :
+            result[pos] = nums[i]
+            pos +=  2 
+        else :
+            result[neg] = nums[i]
+            neg += 2
+    return result
+
+rearrangeeme = rearrange_by_sign([1, 2, -4, -5])
+print(rearrangeeme)
