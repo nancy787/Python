@@ -203,3 +203,29 @@ maxprofit = buysellopt([7,1,5,3,6,4])
 print(maxprofit)
 # timecompexity 0(n)
 # space compleicty O(1)
+
+# Rearrange array
+def rearrangeElement(nums):
+    n = len(nums) - 1
+    positiveArray = []
+    negativeArray = []
+
+    for num in nums:
+        if num > 0:
+            positiveArray.append(num)
+        else:
+            negativeArray.append(num)
+
+    for i in range(n//2):
+         nums[2 * i] = positiveArray[i] 
+         nums[2 * i + 1] = negativeArray[i] 
+
+    return nums
+
+
+rearrange = rearrangeElement([1,2,-3,-1,-2,-3])
+print(rearrange)
+# Timecompexity is O(n2)
+# space compelity O(n)
+
+#Op
