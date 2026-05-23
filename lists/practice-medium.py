@@ -283,3 +283,19 @@ ans = leaders([10, 22, 12, 3, 0, 6])
 print(ans)
 # Time complexity O(n2)
 # spcaes o(n)
+
+def maxconsecutive(arr) :
+    longest = 0
+    for i in range(0, len(arr)) :
+        counter = 1
+        x = arr[i]
+        while x+1 in arr :
+            x += 1
+            counter += 1
+        longest = max(counter, longest)
+    return longest
+
+res = maxconsecutive([100, 4, 200, 1, 3, 2])
+print(res)
+# Timecomplexity O(n2)
+# SpaceComplcixy O(n)
