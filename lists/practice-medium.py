@@ -246,3 +246,40 @@ def rearrange_by_sign(nums) :
 
 rearrangeeme = rearrange_by_sign([1, 2, -4, -5])
 print(rearrangeeme)
+
+# Find all possible premutation
+def permutation(num, index, ans):
+    n = len(num)
+    
+    if index == n:
+        ans.append(num.copy())   # copy is important
+        return
+    
+    for i in range(index, n):
+        num[index], num[i] = num[i], num[index]
+        permutation(num, index + 1, ans)
+        num[index], num[i] = num[i], num[index]  # backtrack
+
+
+ans = []
+permutation([1, 2, 3], 0, ans)
+print(ans)
+
+def leaders(nums) :
+    leader = []
+    n = len(nums) 
+    for i in range(n) :
+        isLead = True
+        for j in range(i + 1, n) : 
+            if nums[j] > nums[i] :
+                isLead = False
+                break
+        if isLead :
+            leader.append(nums[i])
+
+    return leader
+
+ans = leaders([10, 22, 12, 3, 0, 6])
+print(ans)
+# Time complexity O(n2)
+# spcaes o(n)
