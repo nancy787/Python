@@ -300,17 +300,54 @@ print(res)
 # Timecomplexity O(n2)
 # SpaceComplcixy O(n)
 
-def printMatrix(matrixs) :
-    for row in matrixs :
-        print(row, end='')
+def printMatrix(nums) :
+    n = len(nums)
+    for i in range(n) :
+        for j in range(0, len(nums[i])) :
+            print (nums[i][j], end='\n')
 
 matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
 ]
 
-print(printMatrix(matrix))
+data =  printMatrix([matrix])
+print(data)
 
-def setZeros() :
-        
+def matrixSearch(matrix, key) :
+    n = len(matrix)
+    for i in range(n) :
+        for j in range(0, len(matrix[i])) :
+            if(matrix[i][j] == key) :
+                print(f'Key found at position: Row {i}, Column {j}')
+                return (i, j)
+    return -1
+
+mat = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+
+data =  matrixSearch(mat, 8)
+print(data)
+
+def MatrixRowSum(matrix) :
+    maxsum = 0
+   
+    for i in range(0, len(matrix)) :
+        rowsum = 0
+        for j in range(len(matrix[i])) :
+            rowsum +=  matrix[i][j]
+        maxsum = max(rowsum, maxsum)
+    return maxsum
+
+maxsum = [
+    [20,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+
+data =  MatrixRowSum(maxsum)
+print(data)
