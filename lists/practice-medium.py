@@ -299,3 +299,18 @@ res = maxconsecutive([100, 4, 200, 1, 3, 2])
 print(res)
 # Timecomplexity O(n2)
 # SpaceComplcixy O(n)
+
+def printMatrix(matrixs) :
+    for row in matrixs :
+        print(row, end='')
+
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+print(printMatrix(matrix))
+
+def setZeros() :
+        
