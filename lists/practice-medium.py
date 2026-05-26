@@ -351,3 +351,54 @@ maxsum = [
 
 data =  MatrixRowSum(maxsum)
 print(data)
+
+
+def MatrixColSum(matrix) :
+    maxsum = 0
+   
+    for i in range(0, len(matrix)) :
+        colsum = 0
+        for j in range(len(matrix[i])) :
+            colsum +=  matrix[j][i]
+        maxsum = max(colsum, maxsum)
+    return maxsum
+
+maxsum = [
+    [20,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+
+data =  MatrixColSum(maxsum)
+print(data)
+
+def setMatrixZero(matrix):
+    m = len(matrix)
+    n = len(matrix[0])
+
+    # First pass: mark -1
+    for i in range(m):
+        for j in range(n):
+            if matrix[i][j] == 0:
+                for col in range(n):
+                    if matrix[i][col] != 0:
+                        matrix[i][col] = -1
+                for row in range(m):
+                    if matrix[row][j] != 0:
+                        matrix[row][j] = -1
+
+    # Second pass: convert -1 to 0
+    for i in range(m):
+        for j in range(n):
+            if matrix[i][j] == -1:
+                matrix[i][j] = 0
+
+    return matrix
+
+
+matrix = [
+    [1,1,1],
+    [1,0,1],
+    [1,1,1]
+]
+print(setMatrixZero(matrix))
