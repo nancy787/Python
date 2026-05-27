@@ -42,4 +42,35 @@ print(search)
 # Time complexity 
 # O(log2n)
 
+def lowerBoundBruteForce(arr, x) :
+    arr.sort()
+    n = len(arr) - 1
+    for i in range(n) :
+        if arr[i] >= x :
+            return i
+    return n
+arr = [3,5,8,15,19]
+lower_bound = lowerBoundBruteForce(arr, 9)
+print(lower_bound)
 
+# Timecomplity 0(N)
+
+
+def lowerBound(arr, x) :
+    low = 0
+    high = len(arr) - 1
+    ans = x
+    while (low <= high) :
+        mid = (low + high)//2
+        if(arr[mid] >= x) :
+            ans = mid
+            high = mid - 1
+        else : 
+            low = mid + 1
+    
+    return ans
+
+
+arr = [3,5,8,15,19]
+lower_bound = lowerBound(arr, 9)
+print('lower_bound', lower_bound)
