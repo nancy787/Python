@@ -62,7 +62,7 @@ def lowerBound(arr, x) :
     ans = x
     while (low <= high) :
         mid = (low + high)//2
-        if(arr[mid] >= x) :
+        if(arr[mid] >= x) : #lower bound
             ans = mid
             high = mid - 1
         else : 
@@ -74,3 +74,22 @@ def lowerBound(arr, x) :
 arr = [3,5,8,15,19]
 lower_bound = lowerBound(arr, 9)
 print('lower_bound', lower_bound)
+
+
+def upperBound(arr, x) :
+    low = 0
+    high = len(arr) - 1
+    ans = x
+    while (low <= high) :
+        mid = (low + high)//2
+        if(arr[mid] > x) :  #Upper bound 
+            ans = mid
+            high = mid - 1
+        else : 
+            low = mid + 1
+    
+    return ans
+
+arr = [3,5,8,15,19]
+upper_bound = upperBound(arr, 9)
+print('upper_bound', upper_bound)
