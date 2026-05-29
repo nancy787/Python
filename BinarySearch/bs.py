@@ -104,7 +104,7 @@ def BinarySearchInsert(arr, x) :
     ans = n
     while(low <= high) : 
         mid = (low + high) // 2
-        
+
         if(arr[mid] >= x) :
             ans = mid
             high  = mid - 1
@@ -116,3 +116,40 @@ def BinarySearchInsert(arr, x) :
 arr = [1,2,4,7]
 insert_elem = upperBound(arr, 2)
 print('insert_elem', insert_elem)
+
+def firstAndLastoccurance(nums, target) :
+    low = 0
+    high = len(nums) - 1
+    first  = -1
+    while low <= high :
+        mid = (low + high) //2
+        if nums[mid] == target :
+            first = mid
+            high = mid - 1
+        elif target > nums[mid]: 
+                low = mid + 1
+        else :
+            high = mid - 1
+        
+    if first != -1 and first + 1 < len(nums) and nums[first + 1] == target:
+        return first + 1
+
+    return - 1
+nums = [3, 4, 13, 13, 13, 20, 40]
+occurance = firstAndLastoccurance(nums, 13)
+print('occurance', occurance)
+
+
+
+def countOccurance(nums, elem) : 
+    count = 0
+    for i in range(len(nums) - 1) :
+        if nums[i] == elem : 
+                count += 1
+    return count
+
+nums = [2, 2 , 3 , 3 , 3 , 3 , 4]
+count_occurance = countOccurance(nums, 3)
+print('count_occurance', count_occurance)
+# Timecomoelxity O(n)
+# Space o(1)
