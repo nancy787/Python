@@ -189,3 +189,20 @@ def searchElementOptimal(nums, k):
                 high = mid - 1
 
     return -1
+
+
+
+nums = [4,5,6,7,0,1,2]
+search_elem = searchElementOptimal(nums, 0)
+print(search_elem)
+# Timecomplexity O(logn)
+
+def elementSearch(nums, k) :
+    for i in range(len(nums)) :
+        if nums[i] == k :
+            return True
+    return False
+
+elem = [1,3]
+search_emel = elementSearch(elem, 3)
+print('elem_position', search_emel)
