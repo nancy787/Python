@@ -153,3 +153,18 @@ count_occurance = countOccurance(nums, 3)
 print('count_occurance', count_occurance)
 # Timecomoelxity O(n)
 # Space o(1)
+
+
+# Search Element in a Rotated Sorted Array
+
+def Searchelement(nums, k) :
+    for i in range(len(nums)) :
+        if nums[i] == k :
+            return i
+    return -1
+
+elem = [1,3]
+search_emel = Searchelement(elem, 3)
+print('elem_position', search_emel)
+
+# Timecompleity 0(N)
