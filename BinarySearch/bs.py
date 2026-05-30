@@ -251,3 +251,21 @@ def PeakElement(nums) :
 elem = [1,2,3,4,5,6,7,8,5,1]
 peak_element = PeakElement(elem) 
 print('peak_element', peak_element)
+
+# Find out how many times the array has been rotated
+
+def findRotations(nums) :
+    low = 0
+    high = len(nums) - 1
+    while low < high :
+        mid = (low + high) // 2
+        if nums[mid] > nums[high] :
+            low = mid + 1
+        else :
+            high = mid
+
+    return low
+
+elem = [4,5,6,7,0,1,2,3]
+find_rotation = findRotations(elem) 
+print('find_rotation', find_rotation)
