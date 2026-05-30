@@ -206,3 +206,19 @@ def elementSearch(nums, k) :
 elem = [1,3]
 search_emel = elementSearch(elem, 3)
 print('elem_position', search_emel)
+
+
+
+def minimumSortedElem(nums) :
+    minElem = nums[0] 
+    for i in range(len(nums) - 1) :
+        if nums[i] < minElem : 
+            minElem = min(minElem, nums[i])
+
+    return minElem
+
+elem = [4,5,6,7,0,1,2,3]
+min_sorted = minimumSortedElem(elem)
+print('minimim_sorted', min_sorted)
+# O(n)
+# O(1)
