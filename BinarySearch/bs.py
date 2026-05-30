@@ -241,3 +241,13 @@ print('single_search', single_search)
 
 # time O(n)
 # Space O(n)
+
+def PeakElement(nums) :
+    for i in range(1, len(nums) - 1) :
+        if nums[i] >  nums[i - 1] and nums[i] > nums[i+1] :
+                return i
+    return -1 
+
+elem = [1,2,3,4,5,6,7,8,5,1]
+peak_element = PeakElement(elem) 
+print('peak_element', peak_element)
