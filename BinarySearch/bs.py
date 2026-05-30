@@ -222,3 +222,22 @@ min_sorted = minimumSortedElem(elem)
 print('minimim_sorted', min_sorted)
 # O(n)
 # O(1)
+
+def singleSearch(nums) :
+    setElem = {} 
+    for num in nums :
+        if num in setElem :
+            setElem[num] += 1
+        else :
+            setElem[num] = 1
+
+    for key, value in setElem.items() :
+        if value == 1 :
+            return key
+    return -1
+elem = [1,1,3,2,5,5]
+single_search = singleSearch(elem)
+print('single_search', single_search)
+
+# time O(n)
+# Space O(n)
