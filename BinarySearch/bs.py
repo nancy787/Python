@@ -168,3 +168,24 @@ search_emel = Searchelement(elem, 3)
 print('elem_position', search_emel)
 
 # Timecompleity 0(N)
+def searchElementOptimal(nums, k):
+    low = 0
+    high = len(nums) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        if nums[mid] == k:
+            return mid 
+        if nums[low] <= nums[mid]:
+            if nums[low] <= k < nums[mid]:
+                high = mid - 1
+            else:
+                low = mid + 1
+        else:
+            if nums[mid] < k <= nums[high]:
+                low = mid + 1
+            else:
+                high = mid - 1
+
+    return -1
