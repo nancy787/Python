@@ -31,3 +31,28 @@ def largestOddNumbe(str) :
 largest_odd = largestOddNumbe("0214638")
 print(largest_odd)
 # Time complexity o(n)
+
+def Ananagram(str1, str2) :
+
+    l1 = len(str1)
+    l2 = len(str2)
+
+    if l1 != l2 :
+        return False
+
+    str1 = "".join(sorted(str1)) #O(n log n)
+    str2 = "".join(sorted(str2)) #O(n log n)
+    i = 0
+
+    while i < l1 : #O(n)
+        if str1[i] != str2[i] : 
+            return False
+        i += 1
+
+    return True
+
+anagram = Ananagram("RULES", "LESRT" )
+print(anagram)
+
+# Time complexity is O(n log(n))
+# O(n)
