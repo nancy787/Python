@@ -56,3 +56,22 @@ print(anagram)
 
 # Time complexity is O(n log(n))
 # O(n)
+
+# Check if one string is rotation of another
+def checkrotatedString(str, goal) : 
+    d = 1
+    n = len(str)
+    for i in range(0, n - 1) :
+        shift = d % n
+        left_rotated = str[shift:] + str[:shift]
+
+        if left_rotated == goal : 
+            return True
+        d += 1
+    
+    return False
+
+rotated = checkrotatedString("rotation", "tionrota" )
+print(rotated)
+# Timecopkecyu O(n)
+# Space Complity O(n)
