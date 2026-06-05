@@ -75,3 +75,33 @@ rotated = checkrotatedString("rotation", "tionrota" )
 print(rotated)
 # Timecopkecyu O(n)
 # Space Complity O(n)
+
+# Isomorphic String
+def is_isomorphic(s, t):
+    if len(s) != len(t):
+        return False
+
+    s_to_t = {}
+    t_to_s = {}
+    for i in range(len(s)):
+        c1 = s[i]
+        c2 = t[i]
+
+        if c1 in s_to_t and s_to_t[c1] != c2:
+            return False
+
+        if c2 in t_to_s and t_to_s[c2] != c1:
+            return False
+
+        s_to_t[c1] = c2
+        t_to_s[c2] = c1
+
+    return True
+
+print('Isomorphic')
+print(is_isomorphic("egg", "add"))     # True
+# print(is_isomorphic("foo", "bar"))     # False
+# print(is_isomorphic("paper", "title")) # True
+# print(is_isomorphic("badc", "baba"))   # False
+# Timecomplexit O(nlign)
+# Space o(1)
