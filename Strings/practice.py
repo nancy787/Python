@@ -105,3 +105,21 @@ print(is_isomorphic("egg", "add"))     # True
 # print(is_isomorphic("badc", "baba"))   # False
 # Timecomplexit O(nlign)
 # Space o(1)
+
+# Longest Common Prefix
+def longest_common(words) :
+    words.sort()
+    n = len(words) - 1
+    ans = ""
+    first_str = words[0]
+    last_str = words[n]
+
+    for i in range(0, n) :
+        if first_str[i] == last_str[i]  :
+            ans += first_str[i]
+
+    return ans  
+
+print('longest_common')
+str = ["apple", "banana", "grape", "mango"]
+print(longest_common(str))  
