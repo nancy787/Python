@@ -123,3 +123,22 @@ def longest_common(words) :
 print('longest_common')
 str = ["apple", "banana", "grape", "mango"]
 print(longest_common(str))  
+
+
+
+# Largest odd number
+def largestOddNum(str) :
+    str = int(str)
+    
+    maxstr = 0
+    while str > 0 :
+        rem = str % 10
+        if str % 2 != 0 :
+            maxstr = max(maxstr, str)
+        str = str // 10
+
+    return maxstr
+
+print('larger_odd')
+print(largestOddNum("0214638"))  
+# timecompelity 0(nlogn )
