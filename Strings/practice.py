@@ -142,3 +142,25 @@ def largestOddNum(str) :
 print('larger_odd')
 print(largestOddNum("0214638"))  
 # timecompelity 0(nlogn )
+
+
+def valid_paranthesis(str) :
+    count = 0
+    result = ''
+    for s in str :
+        if s == '(' :
+            if count > 0 :
+                result += s
+                count+= 1
+            elif s == ')' :
+                count -= 1
+                if count > 0 :
+                    result += s
+            if count < 0 :
+                return False
+
+    return result
+
+print('valid_paranthesis')
+s = "((()))" 
+print(valid_paranthesis(s))  
