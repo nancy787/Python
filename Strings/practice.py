@@ -164,3 +164,75 @@ def valid_paranthesis(str) :
 print('valid_paranthesis')
 s = "((()))" 
 print(valid_paranthesis(s))  
+
+def sortCharByFreq(str) :
+    result = {} 
+    for s in str :
+        if s in result :
+            result[s] += 1
+        else : 
+            result[s] = 1
+    
+
+        sorted_data_desc = dict(
+            sorted(
+                result.items(),
+                key=lambda item: (-item[1], item[0])
+            )
+        )
+
+
+    return list(sorted_data_desc.keys())
+
+print('sort_char')
+print(sortCharByFreq("tree"))  
+# timecompelity 0(nlogn )
+
+def reverseWords(str) :
+    str = str.split()
+    result = []
+    for i in range(len(str) - 1, -1, -1) :
+        result.append(str[i])
+
+    return " ".join(result)
+print('reverse_words')
+word = "welcome to the jungle"
+print(reverseWords(word))  
+# Time complexoyy 0(n)
+# Space Complexut 0(n) //result list
+
+def reverseString(str) :
+    str = str.split()
+    low = 0
+    high = len(str) - 1
+    
+    while low < high :
+        [str[low], str[high]] = [str[high], str[low]]
+        low+= 1
+        high -= 1
+
+    return str
+
+print('reverse_string_optimal')
+word = "welcome to the jungle"
+print(reverseWords(word)) 
+# Timecompledxty o(nLogn)
+
+# Maximum Nesting Depth of Parenthesis
+def maximumDepth(str) :
+    count = 0
+    result = 0
+
+    for s in str :
+        if s == '(' :
+            count+= 1
+        elif s == ')' :
+            count -= 1
+        if count > result :
+            result = count
+
+    return result
+
+print('maximum_depth')
+s = "(1)+((2))+(((3)))"
+print(maximumDepth(s)) 
