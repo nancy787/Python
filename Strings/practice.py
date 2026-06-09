@@ -236,3 +236,36 @@ def maximumDepth(str) :
 print('maximum_depth')
 s = "(1)+((2))+(((3)))"
 print(maximumDepth(s)) 
+
+
+# Convert roman to integer
+def RomantoInt(roman) :
+    val = {
+        'I' : 1,
+        'V' : 5,
+        'X' : 10,
+        'L' : 50, 
+        'C' : 100,
+        'D' : 500, 
+        'M' : 1000
+    }
+
+    result = 0
+
+    for i in range(0, len(roman) - 1) :
+        if roman[i] not in val :
+            return 'Invalid roman'
+
+        if  val[roman[i+1]] > val[roman[i]]:
+                result -=  val[roman[i]]
+        else : 
+            result += val[roman[i]]
+
+    return result + val[roman[-1]]
+
+print('roman_to_int')
+s = "LVIII"
+print(RomantoInt(s)) 
+
+# timecomplexty = O(n)
+# space compelxty O(n)
