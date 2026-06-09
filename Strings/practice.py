@@ -269,3 +269,22 @@ print(RomantoInt(s))
 
 # timecomplexty = O(n)
 # space compelxty O(n)
+
+def atoi(str) :
+    result = 0
+    str = str.strip()
+    sign = 1
+    if str[0] == '-' :
+        sign = -1
+
+    for i in range(0, len(str)) :
+        if str[i].isdigit() :
+            result =  result * 10 + int(str[i])
+        else :
+            break
+
+    return result * sign
+
+print('atoi')
+s = "words and 987" 
+print(atoi(s)) 
