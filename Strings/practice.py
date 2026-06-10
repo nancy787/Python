@@ -288,3 +288,31 @@ def atoi(str) :
 print('atoi')
 s = "words and 987" 
 print(atoi(s)) 
+
+# Longest Subsctring
+
+def atMostKDistinct(s, k) :
+    freq = {}
+    l, r = 0, 0
+    maxlength = 0
+    while r < len(s)     :
+        freq[s[r]] = freq.get(s[r], 0) + 1
+
+        while(len(freq) > k) :
+            freq[s[l]] -= 1
+            if freq[s[l]] == 0 : 
+                del freq[s[l]]
+            l+= 1
+
+        if(len(freq) <= k) :
+            maxlength = max(maxlength, r - l + 1)
+
+        r = r+1
+
+    return maxlength
+
+print('dist substring count')
+s = "pqpqs" 
+print(atMostKDistinct(s, 2)) 
+# Time complexity O(n)
+# Space compelcity O(n)
