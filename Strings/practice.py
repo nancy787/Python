@@ -340,3 +340,18 @@ print(longestSubString(s))
 
 
 
+def beautySum(s):
+    ans = 0
+    for i in range(len(s)):
+        freq = {}
+        for j in range(i, len(s)):
+            freq[s[j]] = freq.get(s[j], 0) + 1
+            mx = max(freq.values())
+            mn = min(freq.values())
+            ans += mx - mn
+
+    return ans
+
+print('beauty sum')
+s = "aabcbaa"
+print(beautySum(s)) 
