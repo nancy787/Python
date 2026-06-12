@@ -316,3 +316,27 @@ s = "pqpqs"
 print(atMostKDistinct(s, 2)) 
 # Time complexity O(n)
 # Space compelcity O(n)
+
+# longest pallindrome
+def longestSubString(s) :
+    l, r, maxlength = 0, 0, 0
+    n = len(s)
+    hash = {} 
+
+    while r < n :
+        if s[r] in hash and hash[s[r]] >= l:
+            l = hash[s[r]] +  1
+
+        curr_len = r - l + 1
+        maxlength = max(maxlength, curr_len)
+        hash[s[r]] = r
+        r = r + 1
+
+    return maxlength
+    
+print('longest substring')
+s = "aabcbaa" 
+print(longestSubString(s)) 
+
+
+
