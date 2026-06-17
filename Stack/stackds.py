@@ -1,3 +1,20 @@
+# Infix to postfix
+def StackUsingArray(arr) :
+
+
+arr = ["ArrayStack", "push", "push", "top", "pop", "isEmpty"]
+myarr = StackUsingArray(arr)
+print(myarr)
+
+
+
+
+
+
+
+
+
+
 #  infix expression to a postfix expression.
 def priority(operator) :
     priority = -1
